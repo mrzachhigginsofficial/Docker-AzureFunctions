@@ -17,17 +17,7 @@ Source: https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-
 
 3. Create Docker Image (Only Run This On Image Updates): ```docker build -f DockerFile -t <DockerImageName>:latest .```
 
-4. Deploy Docker Image to Container: 
-
-    - If using anonymous authentication: 
-    ```
-    docker run -p 8080:80 <DockerImageName>
-    ```
-    - If using function key (define in host.json) 
-    ```
-    docker run -v /etc/my-secrets:/azure-functions-host/Secrets -e AzureWebJobsSecretStorageType=files -p 8080:80 <DockerImageName>
-    ```
-
+4. Deploy Docker Image to Container: ```docker run -p 8080:80 <DockerImageName>```
 
 ### Removing Docker Container
 Removes a docker container (must be stopped)
