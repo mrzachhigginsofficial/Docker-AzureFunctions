@@ -25,9 +25,7 @@ Source: https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-
     ```
     - If using function key (define in host.json) 
     ```
-    docker run -v /etc/my-secrets:/azure-functions-host/Secrets \
-    -e AzureWebJobsSecretStorageType=files
-    -p 8080:80 <DockerImageName>
+    docker run -v /etc/my-secrets:/azure-functions-host/Secrets -e AzureWebJobsSecretStorageType=files -p 8080:80 <DockerImageName>
     ```
 
 
