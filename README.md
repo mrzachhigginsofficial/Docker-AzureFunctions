@@ -26,8 +26,7 @@ Source: https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-
     ```
     docker run -v /etc/my-secrets:/azure-functions-host/Secrets \
     -e AzureWebJobsSecretStorageType=files
-    -p 8080:80 \
-    <yourImageName>
+    -p 8080:80 <DockerImageName>
     ```
 
 
