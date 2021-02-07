@@ -14,9 +14,9 @@ Source: https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-
 
 -- Add functions --
 
-3. Create Docker Image (Only Run This On Image Updates): ```docker build -f DockerFile -t sandboxfunctions:latest .```
+3. Create Docker Image (Only Run This On Image Updates): ```docker build -f DockerFile -t <DockerImageName>:latest .```
 
-4. Deploy Docker Image to Container: ```docker run -p 8080:80 sandboxfunctions```
+4. Deploy Docker Image to Container: ```docker run -p 8080:80 <DockerImageName>```
 
 
 ### Removing Docker Container
