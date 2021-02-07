@@ -13,11 +13,18 @@ Source: https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-
 
 2. Create Docker File: ```func init --docker-only```
 
+3. Optional -- If using function key, create host_secrets.json.
+    Add the following contents to DOCKERFILE
+    ```
+    ADD host_secret.json /azure-functions-host/Secrets/host.json
+    ENV AzureWebJobsSecretStorageType=files
+    ```
+
     -- Add functions --
 
-3. Create Docker Image (Only Run This On Image Updates): ```docker build -f DockerFile -t <DockerImageName>:latest .```
+4. Create Docker Image (Only Run This On Image Updates): ```docker build -f DockerFile -t <DockerImageName>:latest .```
 
-4. Deploy Docker Image to Container: ```docker run -p 8080:80 <DockerImageName>```
+5. Deploy Docker Image to Container: ```docker run -p 8080:80 <DockerImageName>```
 
 ### Removing Docker Container
 Removes a docker container (must be stopped)
